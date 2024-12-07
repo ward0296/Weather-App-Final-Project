@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var cities: [CityItem] = [
+    
+    ]
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            CityListView(cities: $cities)
+                .tabItem {
+                    Label("Cities", systemImage: "list.dash")
+                }
+
+            SearchView(cities: $cities)
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
+
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
         }
-        .padding()
     }
 }
 

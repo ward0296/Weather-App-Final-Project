@@ -5,4 +5,10 @@
 //  Created by Ahmed  on 2024-11-26.
 //
 
-import Foundation
+import SwiftUI
+
+class CityService {
+    static func fetchCities() -> [String] {
+        return ["Toronto", "Dubai", "London", "New York", "Ottawa"]
+    }
+}
