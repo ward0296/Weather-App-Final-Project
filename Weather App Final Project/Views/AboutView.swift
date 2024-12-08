@@ -39,22 +39,25 @@ struct AboutView: View {
                 if showHiddenImage {
                     Image("a.sunset")
                         .resizable()
-                        .frame(width: 250, height: 250)
+                        .frame(width: 200, height: 200)
                         .clipShape(Circle())
                         .shadow(radius: 10)
-                        .padding()
+                       
                 }
                 
                 Spacer()
                 
                 // Tell user to trigger the hidden feature
-                Text("Tap on the text below 3 times!")
+                Text("Tap on the image below 3 times!")
                     .font(.footnote)
                     .foregroundColor(.gray)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 
                 // This is the trigger for the hidden feature
-                Text("Click here")
-                    .font(.largeTitle)
+                Image("a.rainforest")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 250)
                     .onTapGesture(count: 3) { // 3 taps to reveal the hidden feature
                         showHiddenImage.toggle()
                     }
